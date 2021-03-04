@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    color:#333333;
+}
+
+.speaker-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 100px);
+    grid-auto-rows: 100px;
+}
+
+
+.container {
+    width: 1000px;
+    margin: auto;
+    background-color: #fff;
+    height: 100vh;
+
+}
+
+a {
+    text-decoration : none;
+    color: inherit;
+}
+
+nav {
+    height: 100px;
+    bottom: 0;
+    position: fixed;
+    display: flex;
+    align-items: center;
+}
+
+
+.button {
+    color: #1b1b1b;
+    background-color: #eee;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.button:hover{
+    background-color: #ddd;
+    transition: 0.5s;
+}
+
+
+.button .mute {
+
+}
+
+.leave-button {
+    color: #f84a4a;
+}
+
+.speaker {
+
+}

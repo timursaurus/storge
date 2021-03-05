@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const server = require('http').Server(app)
 const mongoose = require('mongoose')
+const config = require('config')
 
 app.set('view engine', 'ejs')
 app.use(express.static('public'))

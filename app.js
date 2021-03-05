@@ -4,7 +4,7 @@ const server = require('http').Server(app)
 const mongoose = require('mongoose')
 const config = require('config')
 
-app.set('view engine', 'ejs')
+// app.set('view engine', 'ejs')
 app.use(express.static('public'))
 
 app.use('/u/auth', require('./routes/auth.routes'))
@@ -25,12 +25,12 @@ async function start() {
 
 start()
 
-app.get('/', (req, res) => {
-    res.render('index')
-})
+// app.get('/', (req, res) => {
+//     res.render('index')
+// })
 
-app.get('/:room/', (req, res) => {
-    res.render('room')
-})
+// app.get('/:room/', (req, res) => {
+//     res.render('room')
+// })
 
 

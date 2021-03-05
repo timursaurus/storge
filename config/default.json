@@ -1,4 +1,0 @@
-{
-    "jwtSecret": "Toshiy Ponchik I Pirozhok",
-    "mongoUri": "mongodb+srv://timursaurus:timurpass@storge.95hil.mongodb.net/storge?retryWrites=true&w=majority"
-}

@@ -26,6 +26,19 @@ io.on('connection', socket => {
             socket.to(otherUser).emit('joined', socket.id)
         }
     })
+
+    socket.on('request', payload => {
+        io.to(payload.target).emit('request', payload)
+    })
+
+    socket.on('accept', payload => {
+        io.to(payload.target).emit('accept', payload)
+    })
+
+    socket.on('ice-candidate', incoming => {
+        io.to(incoming.target).emit('ice-candidate', incoming.candidate)
+    })
+
 })
 
 

@@ -5,6 +5,8 @@ import CreateRoom from './views/CreateRoom'
 import Profile from './views/Profile'
 import Auth from './views/Auth'
 import Home from './views/Home'
+import Signup from './components/Signup'
+import Login from './components/Login'
 
 export const useRoutes = isLoggedIn => {
     if (isLoggedIn) {
@@ -22,12 +24,12 @@ export const useRoutes = isLoggedIn => {
                 <Route path='/' exact>
                     <Home />
                 </Route>
-            </Switch>
-        )
+            </Switch> 
+        )               
     }
     return (
         <Switch>
-            <Route path='/login' exact>
+            <Route path='/auth' exact>
                 <Auth />
             </Route>
             <Route path='/' exact>

@@ -3,9 +3,13 @@ const app = express()
 const server = require('http').Server(app)
 const mongoose = require('mongoose')
 const config = require('config')
+const socket = require('socket.io')
+const io = socket(server)
 
+
+app.use(express.json({ extended: true}))
 app.use(express.static('public'))
-app.use('/u/auth', require('./routes/auth.routes'))
+app.use('/auth', require('./routes/auth.routes'))
 
 async function start() {
     try {

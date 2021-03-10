@@ -14,6 +14,8 @@ router.post('/signup',
     ], async (req, res) => {
     try {
 
+        console.log(req.body)
+
         const errors = validationResult(req)
 
         if (!errors.isEmpty()) {
@@ -46,7 +48,7 @@ router.post('/signup',
     }
 })
 
-router.post('/login',
+router.post('/signin',
     [
         check('nickname', 'This user doesn\'t exist').toLowerCase().exists(),
         check('password', 'Incorrect password').exists()

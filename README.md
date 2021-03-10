@@ -1,2 +1,8 @@
 # Storge
-### Storge is a web app, the inspiration of which is Clubhouse. Free peer-to-peer audio communications
+### Storge is real time peer-to-peer audio communication application inspired by clubhouse. 
+### *Project work for University*
+
+
+
+#### It's still in development stage
+

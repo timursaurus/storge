@@ -11,6 +11,24 @@ app.use(express.json({ extended: true}))
 app.use(express.static('public'))
 app.use('/auth', require('./routes/auth.routes'))
 
+const rooms = {}
+
+io.on('connection', socket => {
+    socket.on('join', roomId => {
+        if (rooms[roomId]) {
+            rooms[roomId].push(socket.id)
+        } else {
+            rooms[roomId] = [socket.id]
+        }
+        const otherUser = rooms[roomId].find(id => id !== socket.id)
+        if (otherUser) {
+            socket.emit('other', otherUser)
+            socket.to(otherUser).emit('joined', socket.id)
+        }
+    })
+})
+
+
 async function start() {
     try {
         await mongoose.connect(config.get('mongoUri'), {
@@ -23,7 +41,7 @@ async function start() {
         console.log('server error', e.message)
         process.exit(1)
     }
-}
+}   
 
 start()
 

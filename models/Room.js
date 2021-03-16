@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
-const RoomSchema = new mongoose.Schema({
-    roomName: {
+const roomSchema = new mongoose.Schema({
+    name: {
         type: String,
         required: true,
     },
@@ -18,10 +18,6 @@ const RoomSchema = new mongoose.Schema({
         default: 'public',
         enum: ['public', 'private']
     },
-    speakers: {
-        type: String, 
-        default: 'speaker',
-    },
     startedAt: {
         type: Date,
         default: Date.now,
@@ -29,4 +25,7 @@ const RoomSchema = new mongoose.Schema({
     
 })
 
-module.exports = mongoose.model('Room', RoomSchema)
+const Room = mongoose.model('room', roomSchema)
+
+
+module.exports = Room

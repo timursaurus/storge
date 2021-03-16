@@ -14,15 +14,21 @@
   "author": "@timursaurus",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
     "concurrently": "^6.0.0",
     "config": "^3.3.4",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-validator": "^6.10.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.11.15",
+    "simple-peer": "^9.9.3",
     "socket.io": "^4.0.0",
     "socket.io-client": "^3.1.2",
+    "styled-components": "^5.2.1",
     "uuid": "^8.3.2"
   },
   "devDependencies": {

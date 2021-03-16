@@ -1,17 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { v1 as uuid } from 'uuid'
 import { useHistory } from 'react-router-dom'
 
-const CreateRoom = (props) => {
+const CreateRoom = () => {
     
-    let history = useHistory()
+    const [name, setName] = useState('Adik')
+    const [room, setRoom] = useState('')
+    const history = useHistory()
     
-    function create() {
-        const id = uuid();
-        console.log(id)
-        console.log(props)
-        // props.history.push(`/room/${id}`)
-        history.push('/room/lol')
+    const handleCreate = (e) => {
+        setName()
+        history.push(`/room/${room}`)
     }
     
     return (
@@ -19,18 +18,21 @@ const CreateRoom = (props) => {
             <h1>Create Room</h1>
 
             <div className="container">
-                <div className="room-form">
-                    {/* <form action="/room" method='post'>
-                        <div className="room-name">
-                            <label htmlFor="roomName">Room name</label>
-                            <input type="text" name='roomName' id='roomName' />
-                        </div>
-                            <input type="checkbox" name='roomStatus' id='roomStatus' />
-                            
-
-                    </form> */}
-                    <button onClick={create} >Create Room</button>
-                </div>
+                <form onSubmit={handleCreate} >
+                    <div className="room-form">
+                        <label htmlFor="">Room name</label>{' '}
+                        <input
+                        id='roomNameInput'
+                        placeholder='Room name'
+                        onChange={(e) => setRoom(e.target.value)}
+                        type="text"/>
+                    </div>
+                    <div className="room-config">
+                        <button id='createRoom' type='submit'>
+                            Create room and go live!
+                        </button>
+                    </div>
+                </form>
             </div>
 
 

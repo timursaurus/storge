@@ -1,16 +1,17 @@
 import React from 'react'
-import useRoutes from './Routes'
-import {BrowserRouter as Router} from 'react-router-dom'
+import Router from './Router'
+import axios from 'axios'
+import { AuthContextProvider } from './context/AuthContext'
+
+axios.default.withCredetials = true
 
 function App() {
-  const Routes = useRoutes(true)
+  
   
   return (
-    <Router>
-      <div className="App">
-        <div className='container'>{Routes}</div>
-      </div>
-    </Router>
+    <AuthContextProvider>
+      <Router />
+    </AuthContextProvider>
   )
 }
 

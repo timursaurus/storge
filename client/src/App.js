@@ -3,7 +3,7 @@ import useRoutes from './Routes'
 import {BrowserRouter as Router} from 'react-router-dom'
 
 function App() {
-  const Routes = useRoutes(false)
+  const Routes = useRoutes(true)
   
   return (
     <Router>

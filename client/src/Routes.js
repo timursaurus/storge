@@ -5,25 +5,24 @@ import CreateRoom from './views/CreateRoom'
 import Profile from './views/Profile'
 import Auth from './views/Auth'
 import Home from './views/Home'
-import Signup from './components/Signup'
-import Login from './components/Login'
+// import Signup from './components/Signup'
+// import Login from './components/Login'
 
 export const useRoutes = isLoggedIn => {
     if (isLoggedIn) {
         return(
             <Switch>
-                <Route path='/room/:id'>
-                    <Room />
-                </Route>
+                <Route path='/room/:roomId' component={Room} />
+                    
                 <Route path='/create' exact>
                     <CreateRoom />
                 </Route>
                 <Route path='/user/:id' exact>
                     <Profile />
                 </Route>
-                <Route path='/' exact>
+                {/* <Route path='/' exact>
                     <Home />
-                </Route>
+                </Route> */}
             </Switch> 
         )               
     }

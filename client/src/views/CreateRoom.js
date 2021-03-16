@@ -1,11 +1,17 @@
 import React from 'react'
 import { v1 as uuid } from 'uuid'
+import { useHistory } from 'react-router-dom'
 
-const CreateRoom = () => {
+const CreateRoom = (props) => {
     
-    function create = (props) => {
-        const id = uuid()
-        props.history.push(`/room/${id}`)
+    let history = useHistory()
+    
+    function create() {
+        const id = uuid();
+        console.log(id)
+        console.log(props)
+        // props.history.push(`/room/${id}`)
+        history.push('/room/lol')
     }
     
     return (
@@ -14,7 +20,7 @@ const CreateRoom = () => {
 
             <div className="container">
                 <div className="room-form">
-                    <form action="/room" method='post'>
+                    {/* <form action="/room" method='post'>
                         <div className="room-name">
                             <label htmlFor="roomName">Room name</label>
                             <input type="text" name='roomName' id='roomName' />
@@ -22,7 +28,8 @@ const CreateRoom = () => {
                             <input type="checkbox" name='roomStatus' id='roomStatus' />
                             
 
-                    </form>
+                    </form> */}
+                    <button onClick={create} >Create Room</button>
                 </div>
             </div>
 

@@ -3,6 +3,7 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import Signin from './components/auth/Signin'
 import Signup from './components/auth/Signup'
 import Navbar from './components/layout/Navbar'
+import Rooms from './components/rooms/Rooms'
 import AuthContext from './context/AuthContext'
 
 
@@ -30,7 +31,7 @@ function Router() {
                 { loggedIn === true && (
                     <>
                         <Route path='/room'>
-                            <div>Room</div>
+                            <Rooms />
                         </Route>
                     </>
                 )}
